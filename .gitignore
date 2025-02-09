@@ -1,0 +1,17 @@
+/*
+
+!.gitignore
+!README.md
+
+!/etc/
+/etc/*
+!/etc/default/
+/etc/default/*
+!/etc/default/grub
+
+!/etc/dracut.conf.d/
+!etc/dracut.conf.d/10-minimal-headless.conf
+
+!/etc/modprobe.d/
+!etc/modprobe.d/blacklist.conf
+
