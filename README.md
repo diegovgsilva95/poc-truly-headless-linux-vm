@@ -28,7 +28,7 @@ Swap:          499Mi          0B       499Mi
 (the virtual machine is configured with 256MB, so there's almost 60MB missing from total returned by `free -h`)
 
 ### Disk 
-(Injected to this README via `:r!du -hd 1 | sort -h`, manually edited to remove the error regarding /proc/something/ that despawned during the calculation of `du`)
+(Injected to this README via `:r!du -hd 1 / | sort -h`, manually edited to remove the error regarding `/proc/something/` that despawned during the calculation of `du`)
 
 ```
 0	./dev
@@ -50,13 +50,29 @@ Swap:          499Mi          0B       499Mi
 2.3G	.
 ```
 
-### Current processes
-(Injected to this README via `:r!ps -aux`, manually edited to remove kernel threads)  
+### Current packages explicitly installed (XBPS Package Manager)
+(Injected to this README via `:r!xbps-query -m`, unedited)
+
+```
+base-system-0.114_2
+git-2.48.1_1
+grml-zsh-config-0.19.4_1
+grub-2.12_2
+grub-x86_64-efi-2.12_2
+htop-3.3.0_1
+tcsh-6.24.15_1
+vbetool-1.1_5
+vim-9.1.0772_2
+zsh-5.9_3
+```
+
+### Currently running processes
+(Injected to this README via `:r!ps -aux`, manually edited to remove kernel threads, and to remove the long `current log` thing from my previous git commit)  
 
 ```
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0   1004   100 ?        Ss   18:38   0:00 runit
-root       526  0.0  0.5   2540  1152 ?        Ss   18:38   0:00 runsvdir -P /run/runit/runsvdir/current log: ...........................................................................................................................................................................................................................................................................................................................................................................................................
+root       526  0.0  0.5   2540  1152 ?        Ss   18:38   0:00 runsvdir -P /run/runit/runsvdir/current log: ...
 root       532  0.2  0.6   2388  1232 ?        Ss   18:38   0:15 runsv ip6tables
 root       533  0.0  0.6   2388  1264 ?        Ss   18:38   0:00 runsv agetty-tty1
 root       534  0.0  0.6   2388  1228 ?        Ss   18:38   0:00 runsv udevd
